@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link href="/styles/styles.css" rel="stylesheet">
+
+    <title>
+        Title
+    </title>
+</head>
+
+<body>
+    <div id="fpl">
+        <v-app>
+            <v-content>
+                <v-toolbar dark color="primary">
+                    <v-toolbar-side-icon></v-toolbar-side-icon>
+                    <v-toolbar-title class="white--text">Live FPL Scores</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                        <v-icon>search</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                        <v-icon>refresh</v-icon>
+                    </v-btn>
+                </v-toolbar>
+
+
+
+                <template>
+                    <v-data-table :headers="headers" :items="tableData" :pagination.sync="pagination" item-key="teamName"
+                        class="elevation-1">
+                        <template slot="headers" slot-scope="props">
+                            <tr>
+                                <th v-for="header in props.headers" :key="header.text" :class="['column sortable', pagination.descending ? 'desc' : 'asc', header.value === pagination.sortBy ? 'active' : '']"
+                                    @click="changeSort(header.value)">
+                                    <v-icon small>arrow_upward</v-icon>
+                                    {{ header.text }}
+                                </th>
+                            </tr>
+                        </template>
+                        <template slot="items" slot-scope="props">
+                            <tr>
+                                <td>{{ props.item.rank }}</td>
+                                <td class="text-xs-right">{{ props.item.teamName }}</td>
+                                <td class="text-xs-right">{{ props.item.livePoints }}</td>
+                                <td class="text-xs-right">{{ props.item.totalPoints }}</td>
+                                <td class="text-xs-right">{{ props.item.newTotalPoints }}</td>
+                                <td class="text-xs-right">{{ props.item.captain }}</td>
+                                <td class="text-xs-right">{{ props.item.viceCaptain }}</td>
+                            </tr>
+                        </template>
+                    </v-data-table>
+                </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </v-content>
+
+        </v-app>
+
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+
+
+<script src="scripts/scripts.js"></script>
+
+
+</html>

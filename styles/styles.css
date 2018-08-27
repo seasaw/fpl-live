@@ -1,0 +1,18 @@
+table#leagueTable {
+    border-collapse: collapse;
+}
+
+#leagueTable td,
+#leagueTable th {
+    padding: 7px 21px;
+}
+
+#leagueTable tr:not(.noHover):hover {
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+#chart svg {
+    height: 400px;
+    width: 100%;
+}
