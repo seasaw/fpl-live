@@ -4,16 +4,16 @@ import json
 
 MYLEAGUEID = "257477"
 MYTEAMID = "1142621"
-WEEKID = "2"
+WEEKID = "4"
 
 BASEURL = "https://fantasy.premierleague.com/drf/"
 
 LEAGUEDATAURL = "https://fantasy.premierleague.com/drf/leagues-classic-standings/"
 
 TEAMDATAURLSTART = "https://fantasy.premierleague.com/drf/entry/"
-TEAMDATAURLEND = "/event/1/picks"
+TEAMDATAURLEND = "/event/4/picks"
 
-LIVEDATAURL = "https://fantasy.premierleague.com/drf/event/1/live"
+LIVEDATAURL = "https://fantasy.premierleague.com/drf/event/4/live"
 
 PLAYERSDATAURL = "https://fantasy.premierleague.com/drf/bootstrap-static"
 
